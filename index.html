@@ -1,37 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="fc">
+    <!-- Score Bar -->
+    <nav class="header">
+      <img
+        src="./images/logo.svg"
+        alt="rock paper scissors logo"
+        class="logo"
+      />
+      <div class="score-container">
+        <h1 class="score-label">SCORE</h1>
+        <h2 class="score">12</h2>
+      </div>
+    </nav>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <!-- always gonna be there, showing each step -->
+    <div class="game-container">
+      <!-- Player is Choosing -->
+      <div class="choose-sec unchosed">
+        <!-- rock -->
+        <div class="choice rock" id="player-rock">
+          <div class="choice-inner">
+            <img src="./images/icon-rock.svg" alt="Choice: Rock" />
+          </div>
+        </div>
+        <!-- paper -->
+        <div class="choice paper" id="player-paper">
+          <div class="choice-inner">
+            <img src="./images/icon-paper.svg" alt="Choice: Paper" />
+          </div>
+        </div>
+        <!-- scissors -->
+        <div class="choice scissors" id="player-scissors">
+          <div class="choice-inner">
+            <img src="./images/icon-scissors.svg" alt="Choice: Scissors" />
+          </div>
+        </div>
+        <img src="./images/bg-triangle.svg" class="triangle" />
+      </div>
 
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <!-- Show the Result -->
+      <div class="result-sec">
+        <!-- player -->
+        <div class="result-side player">
+          <h1>YOU PICKED</h1>
+          <div class="choice rock">
+            <div class="choice-inner">
+              <img src="./images/icon-rock.svg" />
+            </div>
+          </div>
+          <div class="glow"></div>
+        </div>
+        <!-- result -->
+        <div class="result fc">
+          <h1>YOU LOSE</h1>
+          <button class="play-again">PLAY AGAIN</button>
+        </div>
+        <!-- computer -->
+        <div class="result-side computer">
+          <h1>COMPUTER PICKED</h1>
+          <div class="choice scissors">
+            <div class="choice-inner">
+              <img src="./images/icon-scissors.svg" />
+            </div>
+          </div>
+          <div class="glow"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Rules Window -->
+    <button class="rules-btn">RULES</button>
+    <div class="rules-container">
+      <div class="rules-window">
+        <div class="rules-window">
+          <div class="ctrl-bar fr">
+            <h1>RULES</h1>
+            <button class="close-rules-btn">
+              <img src="./images/icon-close.svg" alt="close window" />
+            </button>
+          </div>
+          <img src="./images/image-rules.svg" class="rules-img" />
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
 </html>

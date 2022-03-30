@@ -65,6 +65,24 @@ body {
 .triangle {
   width: 100%;
 }
+.choose-sec .choice:hover img {
+  animation: shake 4s ease-out infinite;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  4% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  12% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  16% {
+    transform: rotate(0);
+  }
+}
+
 .choose-sec .rock {
   position: absolute;
   bottom: 0;
@@ -88,12 +106,11 @@ body {
 .result-sec {
   width: 90%;
   max-width: calc(1920px * 0.6);
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   color: white;
-  display: none;
 }
 .result-side {
   display: flex;
@@ -107,11 +124,21 @@ body {
   margin-bottom: 4rem;
   font-weight: 600;
 }
+.computer-counter {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  color: white;
+  font-weight: 700;
+  z-index: 100;
+}
 .result {
   width: fit-content;
 }
 .result h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -130,9 +157,10 @@ body {
   color: hsl(349, 70%, 56%);
 }
 .result-sec .choice {
-  width: 330px;
-  height: 330px;
+  width: 300px;
+  height: 300px;
   position: relative;
+  cursor: default;
 }
 .result-sec .glow {
   display: none;
@@ -204,10 +232,10 @@ body {
 .close-rules-btn:hover img {
   transform: scale(1.3);
 }
+
 /********************
 B  U  T  T  O  N  S
 ********************/
-
 /*************************************************************************/
 /* buttons outer circles */
 .choice {
@@ -223,6 +251,7 @@ B  U  T  T  O  N  S
   clip-path: circle(49% at 50% 50%);
   cursor: pointer;
 }
+
 .choice.scissors {
   background-color: hsl(39, 83%, 40%);
 }
@@ -335,6 +364,10 @@ button {
   }
   .result-side.computer {
     grid-area: side2;
+  }
+  .computer-counter {
+    font-size: 6rem;
+    top: 35%;
   }
   .result {
     margin-top: 4rem;
